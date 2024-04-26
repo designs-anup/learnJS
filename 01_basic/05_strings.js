@@ -5,7 +5,7 @@ const repoCount = 10
 
 console.log(`Hello my name is ${name.toUpperCase()} and my repo count is ${repoCount} `);
 
-const gameName = new String("freefire");
+const gameName = new String("free-fire-game");
 
 console.log(gameName[0]);
 console.log(gameName.__proto__);
@@ -24,3 +24,9 @@ console.log(anotherString);
 const newStringOne = "  Joe "
 console.log(newStringOne);
 console.log(newStringOne.trim());
+
+const url = "https://businessexpress.co.in/odi%20pages"
+console.log(url.replace('%20', '-'));
+console.log(url.includes('odi'));
+
+console.log(gameName.split('-'));

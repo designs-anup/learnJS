@@ -24,6 +24,10 @@ const anotherId = Symbol('123')
 
 console.log(id === anotherId);
 
+const bigNumber = 30820802803027834983n
+
+console.log("this is a " + bigNumber);
+
 // Refference (Non premitive) : Array, Objects, Functions 
 
 const heros = ["shaktiman", "nagraj", "doga"]

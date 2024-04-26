@@ -44,3 +44,28 @@ const myFunction = function(){
 console.log(typeof heros)
 console.log(typeof myObj)
 console.log(typeof myFunction);
+
+
+// Memory types Stack (Primitive), Heap (Non-Primitive)
+
+let myYoutubename = "odipagesdotcom"
+
+let anothername = myYoutubename
+anothername = "businessexpressdotcom"
+
+console.log(myYoutubename);
+console.log(anothername);
+
+let userOne = {
+    email : "user@gmail.com",
+    upi: "user@ybl"
+}
+
+console.log(userOne.email);
+
+let userTwo = userOne
+
+userTwo.email = "user@yahoo.co.in"
+
+console.log(userOne.email);
+console.log(userTwo.email);

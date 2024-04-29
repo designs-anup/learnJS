@@ -60,3 +60,17 @@ console.log(Object.keys(tinderUser)); // get all the keys in an array format [ '
 console.log(Object.values(tinderUser)); // get all the values in an array format [ '123abc', 'Sammy', false ]
 
 console.log(tinderUser.hasOwnProperty('isLoggedIn')); // return true/false depends on key exist in an object
+
+
+const course = {
+    coursename : "js in hindi",
+    price : "999",
+    courseInstructure : "Hitesh"
+}
+
+// corse.courseInstructure
+const {courseInstructure : instructure} = course  // destructuring object
+
+// console.log(courseInstructure); // Hitesh
+console.log(instructure);
+

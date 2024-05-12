@@ -55,11 +55,24 @@
         const bodyBg = document.querySelector('body')
         const buttons = document.querySelectorAll('.button')
         
-        console.log(buttons);
+       // console.log(buttons);
 
         buttons.forEach(function(btn){
             btn.addEventListener('click', function(e){
-                console.log(e.target);
+         //       console.log(e.target);
+
+                if(e.target.id === 'grey'){
+                    bodyBg.style.backgroundColor = e.target.id;
+                }
+                if(e.target.id === 'white'){
+                    bodyBg.style.backgroundColor = e.target.id;
+                }
+                if(e.target.id === 'blue'){
+                    bodyBg.style.backgroundColor = e.target.id;
+                }
+                if(e.target.id === 'yellow'){
+                    bodyBg.style.backgroundColor = e.target.id;
+                }
             })
         })
     </script>

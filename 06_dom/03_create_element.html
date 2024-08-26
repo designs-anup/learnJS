@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Create Element</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    
+</body>
+<script>
+    const divEle = document.createElement('div')
+    console.log(divEle);
+
+    divEle.className = 'main'
+    divEle.id = 'select-id-'+Math.random() * 10 + 1
+    divEle.setAttribute("title", "div title")
+    divEle.style.backgroundColor = "green"
+    divEle.style.padding = "12px"
+    divEle.innerText = "Chai aur code"
+
+    document.body.appendChild(divEle)
+    
+</script>
+</html>

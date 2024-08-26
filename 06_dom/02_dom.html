@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+        <div class="day">Friday</div>
+        <div class="day">Saturday</div>
+        <div class="day">Sunday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    // console.log(parent);
+    // console.log(parent.children); // HTMLCollection(7) [div.day, div.day, div.day, div.day, div.day, div.day, div.day]
+    // console.log(parent.children[1]); // <div class="day">Tuesday</div>
+    // console.log(parent.children[1].innerHTML); // Tuesday
+
+    /*
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+    }
+    */
+
+    parent.children[1].style.color = "orange"
+    // console.log(parent.firstElementChild); // <div class="day">Monday</div>
+    // console.log(parent.lastElementChild); // <div class="day">Sunday</div>
+    
+    
+    
+</script>    
+</html>

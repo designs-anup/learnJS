@@ -37,6 +37,10 @@ const addStudent = (name, age, classRoom) => {
         age: age,
         classRoom: classRoom
     })
+
+    // storing data in LocalStrorage
+    localStorage.setItem("students", JSON.stringify(students))
+
     return{name, age, classRoom}
 }
 

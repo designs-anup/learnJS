@@ -29,7 +29,7 @@ const students = [
 }
 */
 
-const students = []
+const students = JSON.parse(localStorage.getItem('students')) || [];
 
 const addStudent = (name, age, classRoom) => {
     students.push({

@@ -14,10 +14,11 @@
         <button class="create">Create</button>
     </form>
 
-
+    <div id="studentInfo"></div>
 <script>
 // select Elements
 const createForm = document.getElementById('create_form')
+const studentInfo = document.getElementById('studentInfo')
 
 // createName.value = "Rohit"
 // creatEmail.value = "rohit@hitman.com"
@@ -34,7 +35,12 @@ createForm.addEventListener('submit', function(e){
     localStorage.setItem('studentDetails', JSON.stringify(localContent))
     this.reset()
     
+    renderTable()
 })
+
+function renderTable(){
+    studentInfo.innerHTML = "<h2>Out Area in JSON format</h2>" + localStorage.getItem('studentDetails')
+}
 
 </script>
 </body>

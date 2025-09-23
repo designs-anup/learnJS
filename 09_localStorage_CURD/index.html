@@ -18,8 +18,6 @@
 <script>
 // select Elements
 const createForm = document.getElementById('create_form')
-const createName = document.querySelector('.createName')
-const createEmail = document.querySelector('.createEmail')
 
 // createName.value = "Rohit"
 // creatEmail.value = "rohit@hitman.com"
@@ -28,13 +26,13 @@ let localContent = []
 
 createForm.addEventListener('submit', function(e){
     e.preventDefault()
-    // console.log("create form is Activated " + createName.value + createEmail.value)
+    const name = this.querySelector('.createName').value
+    const email = this.querySelector('.createEmail').value
 
-    // console.log(`${createName.value} the email id is :: ${createEmail.value}`)
-
-    localContent.push(`{name: ${createName.value}, email: ${createEmail.value} }`)
-
-    console.log(localContent);
+    localContent.push({name,email})
+    // console.log(localContent);
+    localStorage.setItem('studentDetails', JSON.stringify(localContent))
+    this.reset()
     
 })
 

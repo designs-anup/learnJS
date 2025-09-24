@@ -15,15 +15,33 @@
     </form>
 
     <div id="studentInfo"></div>
+    <div id="displayInfo">
+        <table>
+            <thead>
+                <tr>
+                    <td><strong>Name</strong</td>
+                    <td><strong>Email</strong</td>
+                    <td><strong>Action</strong</td>
+                </tr>
+            </thead>
+            <tbody class="tableBody"></tbody>
+        </table>
+    </div>
 <script>
 // select Elements
 const createForm = document.getElementById('create_form')
 const studentInfo = document.getElementById('studentInfo')
+const displayInfo = document.getElementById('displayInfo')
 
 // createName.value = "Rohit"
 // creatEmail.value = "rohit@hitman.com"
 
-let localContent = []
+// let data      = JSON.parse(localStorage.getItem('data')) || [];
+let localContent = JSON.parse(localStorage.getItem('studentDetails')) || [];
+
+// console.log(localContent)
+
+renderTable()
 
 createForm.addEventListener('submit', function(e){
     e.preventDefault()
@@ -40,6 +58,20 @@ createForm.addEventListener('submit', function(e){
 
 function renderTable(){
     studentInfo.innerHTML = "<h2>Out Area in JSON format</h2>" + localStorage.getItem('studentDetails')
+
+    let tbody = document.querySelector('.tableBody')       
+    let displayTablelist = ''
+
+    localContent.forEach(function(item, index){
+        displayTablelist += `<tr>
+                            <td>${item.name}</td>
+                            <td>${item.email}</td>
+                            <td><button>Edit</button></td>
+                            <td><button>Update</button></td>
+                        </tr>`
+    })
+
+    tbody.innerHTML = displayTablelist
 }
 
 </script>

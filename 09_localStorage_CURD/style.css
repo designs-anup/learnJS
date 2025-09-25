@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#update_form{
+    display: none;
+}
+
+input[type=text] {
+  min-width: 100px;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.create{background-color: #04AA6D;} /* Green */
+.update{background-color: #e7b52d;} /* Blue */
+.edit-btn{background-color: #008CBA;} /* Blue */
+.delete-btn{background-color: #f44336;} /* Red */

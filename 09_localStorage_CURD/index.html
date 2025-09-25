@@ -84,7 +84,7 @@ function renderTable(){
                             <td>${item.name}</td>
                             <td>${item.email}</td>
                             <td><button class="edit-btn" data-index="${index}">Edit</button></td>
-                            <td><button class="delete-btn" data-index="${index}">Update</button></td>
+                            <td><button class="delete-btn" data-index="${index}">Delete</button></td>
                         </tr>`
     })
 
@@ -104,6 +104,19 @@ function renderTable(){
             updateForm.querySelector('.updateEmail').value = item.email
 
 
+        })
+    })
+
+    document.querySelectorAll('.delete-btn').forEach((button) => {
+        // console.log(button);
+        button.addEventListener('click', () => {
+            // console.log(button);
+            // console.log(button.getAttribute('data-index'));
+            let index = button.getAttribute('data-index')
+
+            localContent.splice(index, 1)
+            localStorage.setItem('studentDetails', JSON.stringify(localContent))
+            renderTable()
         })
     })
 }

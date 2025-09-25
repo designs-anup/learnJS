@@ -14,6 +14,12 @@
         <button class="create">Create</button>
     </form>
 
+    <form id="update_form">
+        <input type="text" placeholder="name" class="updateName" />
+        <input type="text" placeholder="email" class="updateEmail">
+        <button class="update">Update</button>
+    </form>
+
     <div id="studentInfo"></div>
     <div id="displayInfo">
         <table>
@@ -30,10 +36,14 @@
 <script>
 // select Elements
 const createForm = document.getElementById('create_form')
+const updateForm = document.getElementById('update_form')
+
 const studentInfo = document.getElementById('studentInfo')
 const displayInfo = document.getElementById('displayInfo')
 
 let localContent = JSON.parse(localStorage.getItem('studentDetails')) || [];
+
+let editIndex = null
 
 renderTable()
 
@@ -50,6 +60,19 @@ createForm.addEventListener('submit', function(e){
     renderTable()
 })
 
+updateForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const name = updateForm.querySelector('.updateName').value
+    const email = updateForm.querySelector('.updateEmail').value
+
+    // console.log(localContent[editIndex])
+    localContent[editIndex] = {name, email}
+
+    localStorage.setItem('studentDetails', JSON.stringify(localContent))
+    updateForm.reset()
+    renderTable()
+})
+
 function renderTable(){
     studentInfo.innerHTML = "<h2>Out Area in JSON format</h2>" + localStorage.getItem('studentDetails')
 
@@ -60,12 +83,29 @@ function renderTable(){
         displayTablelist += `<tr>
                             <td>${item.name}</td>
                             <td>${item.email}</td>
-                            <td><button>Edit</button></td>
-                            <td><button>Update</button></td>
+                            <td><button class="edit-btn" data-index="${index}">Edit</button></td>
+                            <td><button class="delete-btn" data-index="${index}">Update</button></td>
                         </tr>`
     })
 
     tbody.innerHTML = displayTablelist
+
+    document.querySelectorAll('.edit-btn').forEach((button) => {
+        // console.log(button)
+        button.addEventListener("click", () => {
+            // console.log(button.getAttribute('data-index'));
+            editIndex = button.getAttribute('data-index');
+            // console.log(localContent[editIndex])
+            let item = localContent[editIndex]
+            // console.log(item.name);
+            // console.log(item.email);
+
+            updateForm.querySelector('.updateName').value = item.name
+            updateForm.querySelector('.updateEmail').value = item.email
+
+
+        })
+    })
 }
 
 </script>
